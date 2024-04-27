@@ -54,6 +54,7 @@ const Login = () => {
         const result = jwtDecode(res.credential);
         const token = res?.credential;
         dispatch(createProfile({name: result?.name, email: result?.email, userId: result?.jti, phoneNumber: '', businessName: '', contactAddress: '', logo: result?.picture, website: ''}))
+        result["_id"] = Math.random(1000000000);
 
         try {
             dispatch({ type: "AUTH", data: {result, token}})
