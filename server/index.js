@@ -36,14 +36,10 @@ app.use('/profiles', profile)
 
 // NODEMAILER TRANSPORT FOR SENDING INVOICE VIA EMAIL
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port : process.env.SMTP_PORT,
+    service: 'gmail',
     auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
-    },
-    tls:{
-        rejectUnauthorized:false
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     }
 })
 
@@ -58,7 +54,7 @@ app.post('/send-pdf', (req, res) => {
        
           // send mail with defined transport object
         transporter.sendMail({
-            from: ` Accountill <hello@accountill.com>`, // sender address
+            from: process.env.SMTP_USER, // sender address
             to: `${email}`, // list of receivers
             replyTo: `${company.email}`,
             subject: `Invoice from ${company.businessName ? company.businessName : company.name}`, // Subject line

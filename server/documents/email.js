@@ -132,8 +132,8 @@ hr {
               </div>
               
               <div class="link-container">
-                  <a href=${link} class="invoice-link" style="color: white">
-                  ${Number(balanceDue) <= 0 ? 'View Receipt' : `View ${type}`}
+                  ${Number(balanceDue) <= 0 ? 'Receipt is attached with this mail' : `View ${type}`}
+                        Receipt is attached with this mail
                   </a>
               </div>
               
@@ -143,16 +143,8 @@ hr {
                   <h2>${company.businessName}</h2>
                   <p>${company.phoneNumber}</p>
                   <p>${company.website ? company?.website : ''}</p>
-                  
               </div>
         </div>
-        
-      <div class"footer">
-          <a href="https://accountill.com">
-          <img class="footer-logo" src="https://i.postimg.cc/hGZKzdkS/logo.png" alt="arc-invoice"/>
-        </a>
-      </div>
-    <p style="text-align: center">Make beautiful invoice for free at accountill.com</p>
     </div>
     </body>
 </html>`
