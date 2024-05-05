@@ -132,9 +132,7 @@ hr {
               </div>
               
               <div class="link-container">
-                  ${Number(balanceDue) <= 0 ? 'Receipt is attached with this mail' : `View ${type}`}
                         Receipt is attached with this mail
-                  </a>
               </div>
               
               <p style="font-size: 14px; padding: 20px">#${id}</p>
